@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principios y Valores | Fenix Consultoría Integral</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #111111;
+      --gold: #C9A962;
+      --gold-light: #D4B978;
+      --gold-dark: #A88B4A;
+      --beige: #F5F0E8;
+      --white: #FFFFFF;
+      --white-muted: rgba(255,255,255,0.7);
+      --border-subtle: rgba(201,169,98,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+    
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+
+    .pattern-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(201,169,98,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,98,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+    
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201,169,98,0.1) 0%, transparent 70%);
+      top: -100px;
+      right: -150px;
+    }
+    
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201,169,98,0.06) 0%, transparent 70%);
+      bottom: 10%;
+      left: -100px;
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--white-muted);
+      transition: color 0.3s ease;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover { color: var(--gold); }
+    .nav-link:hover::after { width: 100%; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--bg-dark);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      padding: 1rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(201,169,98,0.3);
+    }
+    
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white-muted);
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .btn-back:hover { color: var(--gold); }
+
+    /* Animaciones */
+    .js-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .js-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Principle cards */
+    .principle-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .principle-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .principle-card:hover {
+      border-color: rgba(201,169,98,0.3);
+      transform: translateX(8px);
+    }
+    
+    .principle-card:hover::before { opacity: 1; }
+
+    .gold-line-center {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .number-badge {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, rgba(201,169,98,0.1) 0%, rgba(201,169,98,0.05) 100%);
+      border: 1px solid rgba(201,169,98,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .info-icon-large {
+      width: 100px;
+      height: 100px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      background: rgba(201,169,98,0.05);
+      position: relative;
+    }
+
+    .info-icon-large::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,98,0.3);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js-reveal, .principle-card { transition: none; }
+      .js-reveal { opacity: 1; transform: none; }
+      .info-icon-large::after { animation: none; }
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+
+    @media (max-width: 768px) {
+      .number-badge {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pattern-overlay"></div>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[rgba(201,169,98,0.08)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group py-1">
+          <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+          <span class="font-display text-2xl font-semibold tracking-wide text-[var(--white)]">Fenix</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="btn-back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Volver al Inicio
+          </a>
+          <a href="index.html#contacto" class="btn-primary">
+            <span>Contacto</span>
+          </a>
+        </div>
+
+        <a href="index.html" class="md:hidden w-10 h-10 flex items-center justify-center text-[var(--white)] hover:text-[var(--gold)] transition-colors" aria-label="Volver">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative min-h-[55vh] flex items-center pt-20 overflow-hidden">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 relative z-10 text-center">
+      <div class="js-reveal info-icon-large mx-auto mb-10">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4"/>
+          <path d="M12 8h.01"/>
+        </svg>
+      </div>
+
+      <div class="js-reveal flex flex-col items-center gap-4 mb-6" style="transition-delay: 0.1s;">
+        <div class="gold-line-center"></div>
+        <span class="text-[var(--gold)] text-sm tracking-[0.25em] uppercase font-medium">Información Corporativa</span>
+      </div>
+
+      <h1 class="js-reveal font-display text-4xl md:text-5xl lg:text-6xl font-light text-[var(--white)] mb-6" style="transition-delay: 0.2s;">
+        Principios y <span class="text-[var(--gold)] font-semibold">Valores</span>
+      </h1>
+      
+      <p class="js-reveal text-lg md:text-xl text-[var(--white-muted)] max-w-2xl mx-auto leading-relaxed" style="transition-delay: 0.3s;">
+        Los pilares fundamentales que guían cada una de nuestras acciones y definen nuestro compromiso con la excelencia.
+      </p>
+    </div>
+  </section>
+
+  <section class="relative py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      
+      <div class="js-reveal text-center mb-12">
+        <span class="text-[var(--gold)] text-sm tracking-[0.2em] uppercase font-medium">Principios Generales</span>
+      </div>
+
+      <div class="space-y-6">
+        
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.1s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">01</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Profesionalismo</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Somos una empresa de profesionales, cuyos socios, funcionarios y colaboradores destacan por su compromiso y responsabilidad, conocimiento adecuado de las materias y experiencia en sus áreas de trabajo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.15s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">02</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Veracidad</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Actuamos de forma franca, comunicando a nuestros clientes la realidad de su empresa o situación, somos contrarios a las promesas, actuamos en base a estudios serios, siendo obligación poner todos los medios disponibles (intelectuales y materiales) al servicio del cliente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.2s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">03</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Transparencia</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                En estrecha relación con el principio anterior, no creamos falsas expectativas, guiamos y educamos en el proceso.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.25s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">04</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Cercanía</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Nuestro cliente es nuestra principal preocupación y comprendemos su necesidad de información oportuna y real. Asesoramos "personas", el contacto y respuesta a tiempo es una prioridad.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(201,169,98,0.05)] to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="js-reveal flex flex-col items-center text-center gap-8" style="transition-delay: 0.3s;">
+        <h2 class="font-display text-3xl md:text-4xl font-light text-[var(--white)]">
+          Descubre cómo podemos <span class="text-[var(--gold)]">ayudarte</span>
+        </h2>
+        <a href="index.html#servicios" class="btn-primary">
+          <span>Ver Nuestra Metodología</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-[var(--border-subtle)] py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="h-12 w-auto object-contain">
+          <span class="font-display text-xl font-semibold text-[var(--white)]">Fenix</span>
+        </a>
+        <p class="text-sm text-[var(--white-muted)] text-center">
+          2024 Fenix Consultoría Integral. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealElements = document.querySelectorAll('.js-reveal');
+      
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+      };
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        revealElements.forEach(el => revealObserver.observe(el));
+      } else {
+        revealElements.forEach(el => el.classList.add('visible'));
+      }
+    });
+  </script>
+</body>
+</html>
