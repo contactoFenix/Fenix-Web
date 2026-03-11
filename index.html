@@ -388,7 +388,7 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-[rgba(201,169,98,0.08)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="inicio.html" class="flex items-center gap-3 group py-1">
+        <a href="index.html" class="flex items-center gap-3 group py-1">
           <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="logo-img group-hover:scale-105">
           <span class="nav-brand-text font-semibold tracking-wide text-gold-metallic">Fenix</span>
         </a>
@@ -753,7 +753,6 @@
   </footer>
 
   <script>
-    // JS Reveal Animation Handler
     document.addEventListener('DOMContentLoaded', function() {
       const revealElements = document.querySelectorAll('.js-reveal');
       
@@ -778,7 +777,6 @@
         revealElements.forEach(el => el.classList.add('visible'));
       }
 
-      // Mobile menu toggle
       const menuBtn = document.getElementById('menuBtn');
       const mobileMenu = document.getElementById('mobileMenu');
 
@@ -794,7 +792,6 @@
         });
       }
 
-      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
@@ -808,26 +805,19 @@
         });
       });
 
-      // Form submission (Conectado a Formspree)
       const contactForm = document.getElementById('contactForm');
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          
           const submitBtn = this.querySelector('button[type="submit"]');
           const originalText = submitBtn.innerHTML;
-          
           submitBtn.innerHTML = '<span>Enviando...</span>';
           submitBtn.disabled = true;
-          
           const formData = new FormData(this);
-
           fetch(this.action, {
             method: 'POST',
             body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
           }).then(response => {
             if (response.ok) {
               submitBtn.innerHTML = '<span>Enviado con Éxito</span>';
@@ -850,22 +840,18 @@
         });
       }
 
-      // Parallax effect
       if (!prefersReducedMotion) {
         let ticking = false;
-        
         window.addEventListener('scroll', () => {
           if (!ticking) {
             window.requestAnimationFrame(() => {
               const scrollY = window.scrollY;
               const orb1 = document.querySelector('.orb-1');
               const orb2 = document.querySelector('.orb-2');
-              
               if (orb1 && orb2) {
                 orb1.style.transform = `translateY(${scrollY * 0.1}px)`;
                 orb2.style.transform = `translateY(${scrollY * -0.05}px)`;
               }
-              
               ticking = false;
             });
             ticking = true;
@@ -873,7 +859,6 @@
         });
       }
 
-      // Keyboard navigation
       document.querySelectorAll('.btn-primary, .btn-secondary, .nav-link').forEach(el => {
         el.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
