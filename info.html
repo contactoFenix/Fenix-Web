@@ -33,6 +33,22 @@
     
     .font-display { font-family: 'Cormorant Garamond', serif; }
 
+    /* EFECTO ORO 24K METÁLICO */
+    .text-gold-metallic {
+      background: linear-gradient(to right, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: shine 6s linear infinite;
+      filter: drop-shadow(0px 2px 4px rgba(201,169,98,0.3));
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
     .pattern-overlay {
       position: fixed;
       inset: 0;
@@ -54,7 +70,7 @@
     .orb-1 {
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(201,169,98,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(191, 149, 63, 0.12) 0%, transparent 70%);
       top: -100px;
       right: -150px;
     }
@@ -62,7 +78,7 @@
     .orb-2 {
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(201,169,98,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(191, 149, 63, 0.08) 0%, transparent 70%);
       bottom: 10%;
       left: -100px;
     }
@@ -83,30 +99,34 @@
       left: 0;
       width: 0;
       height: 1px;
-      background: var(--gold);
+      background: linear-gradient(90deg, #BF953F, #FCF6BA);
       transition: width 0.3s ease;
     }
     
-    .nav-link:hover { color: var(--gold); }
+    .nav-link:hover { color: #FCF6BA; }
     .nav-link:hover::after { width: 100%; }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: var(--bg-dark);
-      font-weight: 600;
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      background-size: 200% auto;
+      color: #000000;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-size: 0.75rem;
       padding: 1rem 2.5rem;
       position: relative;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       display: inline-block;
       text-decoration: none;
+      border: 1px solid rgba(255, 253, 208, 0.6);
+      box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5);
     }
     
     .btn-primary:hover {
       transform: translateY(-2px);
+      background-position: right center;
       box-shadow: 0 10px 40px rgba(201,169,98,0.3);
     }
     
@@ -124,9 +144,8 @@
       text-decoration: none;
     }
     
-    .btn-back:hover { color: var(--gold); }
+    .btn-back:hover { color: #FCF6BA; }
 
-    /* Animaciones */
     .js-reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -139,7 +158,6 @@
       transform: translateY(0);
     }
 
-    /* Principle cards */
     .principle-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
@@ -155,13 +173,13 @@
       left: 0;
       width: 3px;
       height: 100%;
-      background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+      background: linear-gradient(180deg, #BF953F, #FCF6BA);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
     
     .principle-card:hover {
-      border-color: rgba(201,169,98,0.3);
+      border-color: rgba(252, 246, 186, 0.4);
       transform: translateX(8px);
     }
     
@@ -169,35 +187,35 @@
 
     .gold-line-center {
       width: 60px;
-      height: 1px;
-      background: var(--gold);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FCF6BA, transparent);
     }
 
     .number-badge {
       width: 52px;
       height: 52px;
-      background: linear-gradient(135deg, rgba(201,169,98,0.1) 0%, rgba(201,169,98,0.05) 100%);
-      border: 1px solid rgba(201,169,98,0.3);
+      background: linear-gradient(135deg, rgba(191, 149, 63, 0.2) 0%, rgba(191, 149, 63, 0.05) 100%);
+      border: 1px solid rgba(252, 246, 186, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
       font-weight: 300;
-      color: var(--gold);
+      color: #FCF6BA;
       flex-shrink: 0;
     }
 
     .info-icon-large {
       width: 100px;
       height: 100px;
-      border: 2px solid var(--gold);
+      border: 2px solid #BF953F;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold);
-      background: rgba(201,169,98,0.05);
+      color: #FCF6BA;
+      background: rgba(191, 149, 63, 0.05);
       position: relative;
     }
 
@@ -206,19 +224,21 @@
       position: absolute;
       inset: -12px;
       border-radius: 50%;
-      border: 1px solid rgba(201,169,98,0.3);
+      border: 1px solid rgba(252, 246, 186, 0.3);
       animation: pulse-ring 2s ease-out infinite;
     }
 
     @keyframes pulse-ring {
-      0% {
-        opacity: 0.6;
-        transform: scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1.2);
-      }
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.2); }
+    }
+
+    .logo-img { height: 68px; width: auto; object-fit: contain; transition: all 0.3s ease; }
+
+    /* AUMENTO ESTRATÉGICO EN PC */
+    @media (min-width: 768px) {
+      .logo-img { height: 85px; }
+      .nav-brand-text { font-size: 2rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -227,21 +247,14 @@
       .info-icon-large::after { animation: none; }
     }
 
-    *:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-    }
-
+    *:focus-visible { outline: 2px solid #FCF6BA; outline-offset: 2px; }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: #B38728; border-radius: 4px; }
 
     @media (max-width: 768px) {
-      .number-badge {
-        width: 44px;
-        height: 44px;
-        font-size: 1.25rem;
-      }
+      .number-badge { width: 44px; height: 44px; font-size: 1.25rem; }
+      .nav-brand-text { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -251,24 +264,24 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[rgba(201,169,98,0.08)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
-        <a href="index.html" class="flex items-center gap-3 group py-1">
-          <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
-          <span class="font-display text-2xl font-semibold tracking-wide text-[var(--white)]">Fenix</span>
+        <a href="inicio.html" class="flex items-center gap-3 group py-1">
+          <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="logo-img group-hover:scale-105">
+          <span class="nav-brand-text font-semibold tracking-wide text-gold-metallic">Fenix</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="btn-back">
+          <a href="inicio.html" class="btn-back">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
             </svg>
             Volver al Inicio
           </a>
-          <a href="index.html#contacto" class="btn-primary">
+          <a href="inicio.html#contacto" class="btn-primary">
             <span>Contacto</span>
           </a>
         </div>
 
-        <a href="index.html" class="md:hidden w-10 h-10 flex items-center justify-center text-[var(--white)] hover:text-[var(--gold)] transition-colors" aria-label="Volver">
+        <a href="inicio.html" class="md:hidden w-10 h-10 flex items-center justify-center text-[var(--white)] hover:text-[#FCF6BA] transition-colors" aria-label="Volver">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
@@ -292,11 +305,11 @@
 
       <div class="js-reveal flex flex-col items-center gap-4 mb-6" style="transition-delay: 0.1s;">
         <div class="gold-line-center"></div>
-        <span class="text-[var(--gold)] text-sm tracking-[0.25em] uppercase font-medium">Información Corporativa</span>
+        <span class="text-gold-metallic text-sm tracking-[0.25em] uppercase font-medium">Información Corporativa</span>
       </div>
 
       <h1 class="js-reveal font-display text-4xl md:text-5xl lg:text-6xl font-light text-[var(--white)] mb-6" style="transition-delay: 0.2s;">
-        Principios y <span class="text-[var(--gold)] font-semibold">Valores</span>
+        Principios y <span class="text-gold-metallic font-semibold">Valores</span>
       </h1>
       
       <p class="js-reveal text-lg md:text-xl text-[var(--white-muted)] max-w-2xl mx-auto leading-relaxed" style="transition-delay: 0.3s;">
@@ -309,7 +322,7 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
       
       <div class="js-reveal text-center mb-12">
-        <span class="text-[var(--gold)] text-sm tracking-[0.2em] uppercase font-medium">Principios Generales</span>
+        <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-medium">Principios Generales</span>
       </div>
 
       <div class="space-y-6">
@@ -367,13 +380,13 @@
   </section>
 
   <section class="relative py-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(201,169,98,0.05)] to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(191,149,63,0.05)] to-transparent"></div>
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="js-reveal flex flex-col items-center text-center gap-8" style="transition-delay: 0.3s;">
         <h2 class="font-display text-3xl md:text-4xl font-light text-[var(--white)]">
-          Descubre cómo podemos <span class="text-[var(--gold)]">ayudarte</span>
+          Descubre cómo podemos <span class="text-gold-metallic">ayudarte</span>
         </h2>
-        <a href="index.html#servicios" class="btn-primary">
+        <a href="inicio.html#servicios" class="btn-primary">
           <span>Ver Nuestra Metodología</span>
         </a>
       </div>
@@ -383,9 +396,9 @@
   <footer class="border-t border-[var(--border-subtle)] py-12">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <a href="index.html" class="flex items-center gap-3">
+        <a href="inicio.html" class="flex items-center gap-3">
           <img src="https://z-cdn-media.chatglm.cn/files/15eb3d2b-027b-409b-b3c4-3fc818526ab3.png?auth_key=1872876416-347c6c5de0ca4297bb2c373a43078660-0-94749606e1c619c9963ab02a0088c9fc" alt="Fenix Logo" class="h-12 w-auto object-contain">
-          <span class="font-display text-xl font-semibold text-[var(--white)]">Fenix</span>
+          <span class="text-xl font-semibold text-gold-metallic">Fenix</span>
         </a>
         <p class="text-sm text-[var(--white-muted)] text-center">
           2024 Fenix Consultoría Integral. Todos los derechos reservados.
