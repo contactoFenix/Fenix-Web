@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios Eos | Consultoría Integral Corporativa</title>
+  <title>Servicios Eos | Soluciones Legales, Web y Análisis</title>
   <link rel="icon" type="image/png" href="logo_eos.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,30 +22,17 @@
       --border-subtle: rgba(201,169,98,0.15);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Outfit', sans-serif;
       background-color: var(--bg-dark);
       color: var(--white);
       overflow-x: hidden;
     }
+    .font-display { font-family: 'Cormorant Garamond', serif; }
 
-    .font-display {
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    /* ---------------------------------------------------
-       EFECTO ORO 24K PULIDO (OCTANE RENDER STYLE)
-    --------------------------------------------------- */
+    /* EFECTO ORO 24K PULIDO */
     .text-gold-metallic {
       background: linear-gradient(to right, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
       background-size: 200% auto;
@@ -58,9 +45,7 @@
     }
 
     @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
+      to { background-position: 200% center; }
     }
 
     .svg-gold {
@@ -89,26 +74,22 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-size: 0.75rem;
-      padding: 1rem 2.5rem;
+      padding: 0.75rem 1.5rem;
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       border: 1px solid rgba(255, 253, 208, 0.6);
       box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3), inset 0 0 10px rgba(255, 255, 255, 0.5);
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
+      transform: translateY(-2px) scale(1.02);
       background-position: right center;
       box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.9);
       border-color: #FFFFFF;
-    }
-
-    .btn-primary span {
-      position: relative;
-      z-index: 1;
     }
 
     .btn-secondary {
@@ -118,7 +99,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.75rem;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       transition: all 0.3s ease;
       background: transparent;
       display: inline-block;
@@ -130,7 +111,6 @@
       background: rgba(201,169,98,0.05);
       box-shadow: 0 0 15px rgba(252, 246, 186, 0.1);
     }
-    /* --------------------------------------------------- */
 
     .pattern-overlay {
       position: fixed;
@@ -150,21 +130,8 @@
       pointer-events: none;
     }
 
-    .orb-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(191, 149, 63, 0.12) 0%, transparent 70%);
-      top: -200px;
-      right: -200px;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(191, 149, 63, 0.08) 0%, transparent 70%);
-      bottom: 20%;
-      left: -100px;
-    }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(191, 149, 63, 0.12) 0%, transparent 70%); top: -200px; right: -200px; }
+    .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(191, 149, 63, 0.08) 0%, transparent 70%); bottom: 20%; left: -100px; }
 
     .nav-link {
       position: relative;
@@ -186,49 +153,15 @@
       transition: width 0.3s ease;
     }
 
-    .nav-link:hover {
-      color: #FCF6BA;
-      text-shadow: 0 0 8px rgba(252, 246, 186, 0.3);
-    }
+    .nav-link:hover { color: #FCF6BA; text-shadow: 0 0 8px rgba(252, 246, 186, 0.3); }
+    .nav-link:hover::after { width: 100%; }
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .btn-info {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--border-subtle);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white-muted);
-      transition: all 0.3s ease;
-      background: transparent;
-    }
-
-    .btn-info:hover {
-      border-color: #FCF6BA;
-      color: #FCF6BA;
-      background: rgba(201,169,98,0.1);
-      box-shadow: 0 0 15px rgba(252, 246, 186, 0.2);
-    }
-
-    .reveal { opacity: 1; transform: translateY(0); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    
     .js-reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .js-reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .js-reveal.visible { opacity: 1; transform: translateY(0); }
 
     .service-card {
       background: var(--bg-card);
@@ -237,130 +170,56 @@
       overflow: hidden;
       transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     }
-
     .service-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
+      top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, transparent, #FCF6BA, transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      opacity: 0; transition: opacity 0.4s ease;
     }
-
     .service-card:hover {
       transform: translateY(-8px);
       border-color: rgba(252, 246, 186, 0.4);
       box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(191, 149, 63, 0.1);
     }
+    .service-card:hover::before { opacity: 1; }
 
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .team-card {
-      background: linear-gradient(180deg, rgba(17,17,17,0.8) 0%, rgba(10,10,10,0.95) 100%);
+    .principle-card {
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       position: relative;
+      overflow: hidden;
       transition: all 0.4s ease;
     }
-
-    .team-card::after {
+    .principle-card::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #BF953F, #FCF6BA, #BF953F);
-      transition: width 0.4s ease;
+      top: 0; left: 0; width: 3px; height: 100%;
+      background: linear-gradient(180deg, #BF953F, #FCF6BA);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .principle-card:hover { border-color: rgba(252, 246, 186, 0.4); transform: translateX(8px); }
+    .principle-card:hover::before { opacity: 1; }
+
+    .number-badge {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, rgba(191, 149, 63, 0.2) 0%, rgba(191, 149, 63, 0.05) 100%);
+      border: 1px solid rgba(252, 246, 186, 0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300;
+      color: #FCF6BA; flex-shrink: 0;
     }
 
-    .team-card:hover {
-      border-color: rgba(201,169,98,0.3);
-      background: linear-gradient(180deg, rgba(25,25,25,0.9) 0%, rgba(15,15,15,0.98) 100%);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .team-card:hover::after {
-      width: 60%;
-    }
-
-    .form-input {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-subtle);
-      color: var(--white);
-      padding: 1rem 1.25rem;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.9375rem;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    .form-input:focus {
-      outline: none;
-      border-color: #B38728;
-      background: rgba(201,169,98,0.05);
-      box-shadow: 0 0 10px rgba(191, 149, 63, 0.1);
-    }
-
-    .form-input::placeholder { color: rgba(255,255,255,0.4); }
-
-    .phase-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      font-weight: 300;
-      opacity: 0.15;
-      line-height: 1;
-      position: absolute;
-      top: -10px;
-      right: 20px;
-    }
-
-    .beige-section { background: var(--beige); }
     .logo-img { height: 68px; width: auto; object-fit: contain; transition: all 0.3s ease; }
-    .logo-img-footer { height: 50px; width: auto; object-fit: contain; }
 
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.1) translateY(-2px);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-    }
-
-    .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
-
-    /* MEDIA QUERIES PARA EL AUMENTO ESTRATÉGICO DEL LOGO */
     @media (min-width: 768px) {
-      .logo-img { height: 85px; } /* Logo más grande en PC */
-      .nav-brand-text { font-size: 2rem; } /* Texto más grande en PC */
+      .logo-img { height: 85px; }
+      .nav-brand-text { font-size: 2rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       .js-reveal { opacity: 1; transform: none; transition: none; }
-      .service-card, .team-card, .btn-primary, .btn-secondary, .whatsapp-btn, .text-gold-metallic {
-        transition: none; animation: none;
-      }
+      .service-card, .btn-primary, .btn-secondary, .text-gold-metallic, .principle-card { transition: none; animation: none; }
     }
-
-    *:focus-visible { outline: 2px solid #D4B978; outline-offset: 2px; }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--bg-dark); }
     ::-webkit-scrollbar-thumb { background: #B38728; border-radius: 4px; }
@@ -380,36 +239,26 @@
 
   <div class="pattern-overlay"></div>
 
-  <a href="https://wa.me/56964454872" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-[rgba(201,169,98,0.08)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-20">
         <a href="#" class="flex items-center gap-3 group py-1">
-          <img src="logo_eos.png" alt= "eos logo" class="logo-img group-hover:scale-105">
+          <img src="logo_eos.png" alt="Eos Logo" class="logo-img group-hover:scale-105">
           <span class="nav-brand-text font-semibold tracking-wide text-gold-metallic">Servicios Eos</span>
         </a>
 
         <div class="hidden md:flex items-center gap-10">
           <a href="#servicios" class="nav-link">Servicios</a>
-          <a href="#equipo" class="nav-link">Equipo</a>
-          <a href="#contacto" class="nav-link">Contacto</a>
+          <a href="#departamentos" class="nav-link">Departamentos</a>
+          <a href="#principios" class="nav-link">Principios</a>
         </div>
 
         <div class="hidden md:flex items-center gap-4">
-          <a href="info.html" class="btn-info" aria-label="Información">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 16v-4"/>
-              <path d="M12 8h.01"/>
+          <a href="https://wa.me/56964454872" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
-          </a>
-          <a href="#contacto" class="btn-primary">
-            <span>Diagnóstico Inicial</span>
+            <span>Contáctanos</span>
           </a>
         </div>
 
@@ -426,169 +275,91 @@
     <div id="mobileMenu" class="hidden md:hidden bg-[var(--bg-card)] border-t border-[var(--border-subtle)]">
       <div class="px-6 py-6 flex flex-col gap-4">
         <a href="#servicios" class="nav-link py-2">Servicios</a>
-        <a href="#equipo" class="nav-link py-2">Equipo</a>
-        <a href="#contacto" class="nav-link py-2">Contacto</a>
-        <a href="info.html" class="nav-link py-2">Principios</a>
-        <a href="#contacto" class="btn-primary text-center mt-4">
-          <span>Diagnóstico Inicial</span>
+        <a href="#departamentos" class="nav-link py-2">Departamentos</a>
+        <a href="#principios" class="nav-link py-2">Principios</a>
+        <a href="https://wa.me/56964454872" target="_blank" rel="noopener noreferrer" class="btn-primary text-center mt-4 justify-center">
+          <span>Contáctanos</span>
         </a>
       </div>
     </div>
   </nav>
 
-  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 relative z-10">
-      <div class="max-w-4xl">
-        <div class="js-reveal flex items-center gap-4 mb-8">
-          <div class="gold-line"></div>
-          <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-bold">Consultoría Integral</span>
-        </div>
-
-        <h1 class="js-reveal font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-8 text-[var(--white)]" style="transition-delay: 0.1s;">
-          Orden, Control y<br>
-          <span class="font-semibold text-gold-metallic">Crecimiento Estratégico</span>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+      <div class="max-w-5xl mx-auto text-center">
+        
+        <h1 class="js-reveal font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] mb-6 text-[var(--white)]" style="transition-delay: 0.1s;">
+          Orden, Dirección y<br>
+          <span class="font-semibold text-gold-metallic">Control</span>
         </h1>
 
-        <p class="js-reveal text-lg md:text-xl text-[var(--white-muted)] max-w-2xl leading-relaxed mb-12" style="transition-delay: 0.2s;">
-          Integramos inteligencia de datos, rigor contable y un escudo legal inquebrantable para blindar tu patrimonio y escalar tu negocio.
+        <p class="js-reveal text-xl md:text-2xl text-[var(--white-muted)] font-light max-w-2xl mx-auto leading-relaxed mb-16" style="transition-delay: 0.2s;">
+          El crecimiento no es suerte, <span class="text-[#FCF6BA] font-medium">es estrategia.</span>
         </p>
 
-        <div class="js-reveal flex flex-col sm:flex-row gap-4" style="transition-delay: 0.3s;">
-          <a href="#contacto" class="btn-primary">
-            <span>Solicita tu Diagnóstico Inicial</span>
-          </a>
-          <a href="#servicios" class="btn-secondary">
-            Conoce Nuestra Metodología
-          </a>
-        </div>
+        <div id="servicios" class="js-reveal grid md:grid-cols-2 gap-8 text-left" style="transition-delay: 0.3s;">
+          
+          <div class="service-card p-8 lg:p-10 rounded-lg flex flex-col">
+            <div class="text-center mb-8">
+              <a href="personas.html" class="font-display text-4xl font-semibold text-[var(--white)] hover:text-[#FCF6BA] hover:scale-110 transition-transform duration-300 inline-block">Personas</a>
+              <div class="w-16 h-px bg-[var(--gold)] mx-auto mt-4 shadow-[0_0_8px_#FCF6BA]"></div>
+            </div>
+            
+            <ul class="space-y-4 text-lg text-[var(--white-muted)] mb-10 flex-grow">
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> Representacion en juicios.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> Redaccion y revision de contratos.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> realizacion de tramites.
+              </li>
+            </ul>
+            <a href="personas.html" class="btn-secondary w-full text-center">Saber más...</a>
+          </div>
 
-        <div class="js-reveal flex justify-center gap-16 md:gap-32 mt-20 pt-12 border-t border-[var(--border-subtle)] text-center" style="transition-delay: 0.4s;">
-          <div>
-            <div class="font-display text-5xl md:text-6xl font-bold text-gold-metallic mb-2">14+</div>
-            <div class="text-sm text-[var(--white-muted)] tracking-wide uppercase font-medium">Años de Experiencia</div>
+          <div class="service-card p-8 lg:p-10 rounded-lg flex flex-col">
+            <div class="text-center mb-8">
+              <a href="empresas.html" class="font-display text-4xl font-semibold text-[var(--white)] hover:text-[#FCF6BA] hover:scale-110 transition-transform duration-300 inline-block">Empresas</a>
+              <div class="w-16 h-px bg-[var(--gold)] mx-auto mt-4 shadow-[0_0_8px_#FCF6BA]"></div>
+            </div>
+            
+            <ul class="space-y-4 text-lg text-[var(--white-muted)] mb-10 flex-grow">
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> Blindaje y estructuración corporativa.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> Ecosistemas web y plataformas de gestión.
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-[#FCF6BA] mt-1">✓</span> Análisis de datos e inteligencia de negocios.
+              </li>
+            </ul>
+            <a href="empresas.html" class="btn-secondary w-full text-center">Saber más...</a>
           </div>
-          <div>
-            <div class="font-display text-5xl md:text-6xl font-bold text-gold-metallic mb-2">200+</div>
-            <div class="text-sm text-[var(--white-muted)] tracking-wide uppercase font-medium">Empresas Asesoradas</div>
-          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <section id="servicios" class="relative py-24 lg:py-32 beige-section">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="js-reveal flex flex-col items-center justify-center gap-4 mb-6">
-        <div class="gold-line-center"></div>
-        <span class="text-[#8B6508] font-bold text-sm tracking-[0.2em] uppercase">Nuestra Metodología</span>
-      </div>
-
-      <h2 class="js-reveal font-display text-4xl md:text-5xl font-light text-[var(--bg-dark)] mb-6 text-center" style="transition-delay: 0.1s;">
-        Un Proceso en <span class="text-[#8B6508] font-bold">3 Fases</span>
-      </h2>
-      <p class="js-reveal text-[rgba(10,10,10,0.7)] text-lg max-w-2xl mb-16 mx-auto text-center" style="transition-delay: 0.2s;">
-        Cada fase está diseñada para diagnosticar, corregir y potenciar tu operación empresarial con precisión quirúrgica.
-      </p>
-
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="js-reveal service-card border-[rgba(201,169,98,0.2)] p-8 lg:p-10 relative" style="transition-delay: 0.1s;">
-          <span class="phase-number text-gold-metallic">01</span>
-          <div class="relative z-10">
-            <div class="text-gold-metallic font-bold text-sm tracking-[0.15em] uppercase mb-4">Fase 1</div>
-            <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Plan Orden</h3>
-            <div class="w-12 h-px bg-[var(--gold)] mb-6 shadow-[0_0_8px_#FCF6BA]"></div>
-            <p class="text-[rgba(255,255,255,0.8)] leading-relaxed mb-6">
-              <span class="font-semibold text-gold-metallic">Diagnóstico.</span> Tasación profunda de las vulnerabilidades operativas, legales y financieras actuales de la empresa.
-            </p>
-            <ul class="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Auditoría legal completa
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Análisis de estados financieros
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Evaluación de procesos internos
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="js-reveal service-card border-[rgba(201,169,98,0.2)] p-8 lg:p-10 relative" style="transition-delay: 0.2s;">
-          <span class="phase-number text-gold-metallic">02</span>
-          <div class="relative z-10">
-            <div class="text-gold-metallic font-bold text-sm tracking-[0.15em] uppercase mb-4">Fase 2</div>
-            <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Plan Estabilización</h3>
-            <div class="w-12 h-px bg-[var(--gold)] mb-6 shadow-[0_0_8px_#FCF6BA]"></div>
-            <p class="text-[rgba(255,255,255,0.8)] leading-relaxed mb-6">
-              <span class="font-semibold text-gold-metallic">Ejecución.</span> Intervención táctica de 3 meses para corregir fugas de capital, implementar software de control y sanear la estructura.
-            </p>
-            <ul class="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Implementación de controles
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Saneamiento contable
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Software de gestión integrado
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="js-reveal service-card border-[rgba(201,169,98,0.2)] p-8 lg:p-10 relative" style="transition-delay: 0.3s;">
-          <span class="phase-number text-gold-metallic">03</span>
-          <div class="relative z-10">
-            <div class="text-gold-metallic font-bold text-sm tracking-[0.15em] uppercase mb-4">Fase 3</div>
-            <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Plan Crecimiento</h3>
-            <div class="w-12 h-px bg-[var(--gold)] mb-6 shadow-[0_0_8px_#FCF6BA]"></div>
-            <p class="text-[rgba(255,255,255,0.8)] leading-relaxed mb-6">
-              <span class="font-semibold text-gold-metallic">Partner Estratégico.</span> Suscripción mensual con asesoría legal continua, mantenimiento contable y reportes de datos operativos.
-            </p>
-            <ul class="space-y-2 text-sm text-[rgba(255,255,255,0.7)]">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Asesoría legal permanente
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Reportes mensuales KPI
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-[#FCF6BA] shadow-[0_0_5px_#FCF6BA]"></span>
-                Soporte prioritario 24/7
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="equipo" class="relative py-24 lg:py-32">
+  <section id="departamentos" class="relative py-24 lg:py-32 bg-[var(--bg-card)] border-t border-b border-[var(--border-subtle)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="js-reveal flex flex-col items-center justify-center gap-4 mb-16">
         <div class="gold-line"></div>
-        <span class="text-gold-metallic font-bold text-sm tracking-[0.2em] uppercase">Nuestro Equipo</span>
+        <span class="text-gold-metallic font-bold text-sm tracking-[0.2em] uppercase">Estructura Interna</span>
       </div>
 
       <h2 class="js-reveal font-display text-4xl md:text-5xl font-light text-[var(--white)] mb-16 text-center" style="transition-delay: 0.1s;">
-        Un Directorio de Expertos<br>
-        <span class="text-gold-metallic font-semibold">a tu Disposición</span>
+        Departamentos de <span class="text-gold-metallic font-semibold">Especialidad</span>
       </h2>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="js-reveal team-card p-8 lg:p-10" style="transition-delay: 0.1s;">
+        <div class="js-reveal service-card p-8 lg:p-10" style="transition-delay: 0.1s;">
           <div class="w-14 h-14 border border-[var(--gold)] flex items-center justify-center mb-8 shadow-[inset_0_0_15px_rgba(252,246,186,0.1)]">
             <svg class="svg-gold" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -597,13 +368,13 @@
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Área Legal</h3>
-          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Blindaje Corporativo</div>
+          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Representación y Blindaje</div>
           <p class="text-[var(--white-muted)] leading-relaxed">
-            Liderada por una abogada senior con 14 años de experiencia comprobada en gestión de carteras de clientes, cobranzas y blindaje corporativo.
+            Asesoría jurídica profunda, gestión de conflictos, contratos y estructuración legal sólida tanto para individuos como para entidades corporativas.
           </p>
         </div>
 
-        <div class="js-reveal team-card p-8 lg:p-10" style="transition-delay: 0.2s;">
+        <div class="js-reveal service-card p-8 lg:p-10" style="transition-delay: 0.2s;">
           <div class="w-14 h-14 border border-[var(--gold)] flex items-center justify-center mb-8 shadow-[inset_0_0_15px_rgba(252,246,186,0.1)]">
             <svg class="svg-gold" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -611,150 +382,103 @@
               <path d="M9 21V9"/>
             </svg>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Área de Datos</h3>
-          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Inteligencia de Negocios</div>
+          <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Área de Desarrollo Web</h3>
+          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Ecosistemas Digitales</div>
           <p class="text-[var(--white-muted)] leading-relaxed">
-            Especialistas en la creación de herramientas tecnológicas internas, optimización de inventarios e inteligencia de negocios para decision-making.
+            Creación de plataformas modernas, páginas de aterrizaje optimizadas y herramientas de gestión internas para modernizar tu operación comercial.
           </p>
         </div>
 
-        <div class="js-reveal team-card p-8 lg:p-10" style="transition-delay: 0.3s;">
+        <div class="js-reveal service-card p-8 lg:p-10" style="transition-delay: 0.3s;">
           <div class="w-14 h-14 border border-[var(--gold)] flex items-center justify-center mb-8 shadow-[inset_0_0_15px_rgba(252,246,186,0.1)]">
             <svg class="svg-gold" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
             </svg>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Área Contable</h3>
-          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Control Financiero</div>
+          <h3 class="font-display text-2xl font-semibold text-[var(--white)] mb-2">Área de Análisis</h3>
+          <div class="text-gold-metallic font-bold text-sm tracking-wide mb-6 uppercase">Inteligencia de Negocios</div>
           <p class="text-[var(--white-muted)] leading-relaxed">
-            Control financiero estricto, optimización tributaria y saneamiento de flujo de caja para garantizar la estabilidad operativa de tu empresa.
+            Procesamiento y auditoría de datos, evaluación de métricas y construcción de reportes estratégicos para la toma de decisiones basada en información real.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative py-20 bg-[var(--bg-dark)]">
-    <div class="absolute inset-0 bg-gradient-to-r from-[rgba(252,246,186,0.05)] to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="js-reveal flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div>
-          <h2 class="font-display text-3xl md:text-4xl font-light text-[var(--white)] mb-4">
-            ¿Listo para blindar tu empresa?
-          </h2>
-          <p class="text-[var(--white-muted)]">Agenda una consulta sin compromiso con nuestro equipo.</p>
-        </div>
-        <a href="#contacto" class="btn-primary whitespace-nowrap">
-          <span>Agendar Consulta</span>
-        </a>
+  <section id="principios" class="relative py-24 lg:py-32">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      
+      <div class="js-reveal text-center mb-12">
+        <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-medium">Cultura Corporativa</span>
+        <h2 class="font-display text-4xl md:text-5xl font-light text-[var(--white)] mt-4">Principios y Valores</h2>
       </div>
-    </div>
-  </section>
 
-  <section id="contacto" class="relative py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
-        <div>
-          <div class="js-reveal flex items-center gap-4 mb-6">
-            <div class="gold-line"></div>
-            <span class="text-gold-metallic font-bold text-sm tracking-[0.2em] uppercase">Contacto</span>
-          </div>
-
-          <h2 class="js-reveal font-display text-4xl md:text-5xl font-light text-[var(--white)] mb-8" style="transition-delay: 0.1s;">
-            El crecimiento no es suerte,<br>
-            <span class="text-gold-metallic font-semibold">es estructura.</span>
-          </h2>
-
-          <p class="js-reveal text-[var(--white-muted)] text-lg leading-relaxed mb-12" style="transition-delay: 0.2s;">
-            Hablemos sobre cómo podemos ayudarte a construir una base sólida para el crecimiento sostenible de tu empresa.
-          </p>
-
-          <div class="js-reveal space-y-6" style="transition-delay: 0.3s;">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 border border-[var(--border-subtle)] flex items-center justify-center shadow-[inset_0_0_10px_rgba(252,246,186,0.05)]">
-                <svg class="svg-gold" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#gold-gradient)" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-sm text-[var(--white-muted)]">Teléfono</div>
-                <div class="text-[var(--white)]">+56 9 6445 4872</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 border border-[var(--border-subtle)] flex items-center justify-center shadow-[inset_0_0_10px_rgba(252,246,186,0.05)]">
-                <svg class="svg-gold" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#gold-gradient)" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-sm text-[var(--white-muted)]">Email</div>
-                <div class="text-[var(--white)]">contacto@fenixsoluciones.com</div>
-              </div>
+      <div class="space-y-6">
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.1s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">01</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Profesionalismo</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Somos una empresa de profesionales que destacan por su compromiso, responsabilidad y experiencia técnica en cada una de sus áreas de trabajo.
+              </p>
             </div>
           </div>
         </div>
-
-        <div class="js-reveal" style="transition-delay: 0.2s;">
-          <form id="contactForm" action="https://formspree.io/f/mkoqjlyd" method="POST" class="bg-[var(--bg-card)] border border-[var(--border-subtle)] p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
-            <h3 class="font-display text-2xl font-semibold text-gold-metallic mb-8">Solicita tu Diagnóstico</h3>
-            
-            <div class="space-y-6">
-              <div class="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label for="nombre" class="block text-sm text-[var(--white-muted)] mb-2">Nombre</label>
-                  <input type="text" id="nombre" name="nombre" required class="form-input" placeholder="Tu nombre">
-                </div>
-                <div>
-                  <label for="empresa" class="block text-sm text-[var(--white-muted)] mb-2">Empresa</label>
-                  <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nombre de tu empresa">
-                </div>
-              </div>
-
-              <div>
-                <label for="email" class="block text-sm text-[var(--white-muted)] mb-2">Email</label>
-                <input type="email" id="email" name="email" required class="form-input" placeholder="tu@email.com">
-              </div>
-
-              <div>
-                <label for="telefono" class="block text-sm text-[var(--white-muted)] mb-2">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+56 9 0000 0000">
-              </div>
-
-              <div>
-                <label for="mensaje" class="block text-sm text-[var(--white-muted)] mb-2">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="4" class="form-input resize-none" placeholder="Cuéntanos brevemente sobre tu situación actual..."></textarea>
-              </div>
-
-              <button type="submit" class="btn-primary w-full">
-                <span>Enviar Solicitud</span>
-              </button>
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.15s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">02</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Veracidad</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Actuamos de forma franca, comunicando la realidad de cada situación. Evitamos las falsas promesas y fundamentamos nuestras acciones en estudios serios y aplicables.
+              </p>
             </div>
-          </form>
+          </div>
+        </div>
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.2s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">03</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Transparencia</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                No creamos expectativas irreales. Creemos en la importancia de guiar y educar a nuestros clientes a lo largo de todo el proceso estratégico.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="js-reveal principle-card p-8 lg:p-10" style="transition-delay: 0.25s;">
+          <div class="flex gap-6 items-start">
+            <div class="number-badge">04</div>
+            <div class="flex-1">
+              <h3 class="font-display text-2xl md:text-3xl font-semibold text-[var(--white)] mb-4">Cercanía</h3>
+              <p class="text-[var(--white-muted)] leading-relaxed text-lg">
+                Asesoramos personas antes que entidades. Comprendemos la necesidad de información oportuna, haciendo del contacto directo y la respuesta a tiempo nuestra mayor prioridad.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <footer class="border-t border-[var(--border-subtle)] py-12">
+  <footer class="border-t border-[var(--border-subtle)] py-12 bg-[var(--bg-card)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-          <img src="logo_fenix_dorado.png" alt="Fenix Logo" class="logo-img-footer">
-          <span class="text-xl font-semibold text-gold-metallic">Fenix</span>
-        </div>
-
-        <p class="text-sm text-[var(--white-muted)]">
-          2026 Fenix Consultoría Integral. Todos los derechos reservados.
+        <a href="#" class="flex items-center gap-3">
+          <img src="logo_eos.png" alt="Eos Logo" class="h-12 w-auto object-contain">
+          <span class="font-display text-xl font-semibold text-[var(--white)]">Servicios Eos</span>
+        </a>
+        <p class="text-sm text-[var(--white-muted)] text-center md:text-right">
+          2026 Servicios Eos. Todos los derechos reservados.
         </p>
       </div>
     </div>
   </footer>
 
   <script>
-    // JS Reveal Animation Handler
+    // JS Reveal Animation
     document.addEventListener('DOMContentLoaded', function() {
       const revealElements = document.querySelectorAll('.js-reveal');
       
@@ -799,7 +523,9 @@
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
+          const targetId = this.getAttribute('href');
+          if(targetId === '#') return;
+          const target = document.querySelector(targetId);
           if (target) {
             target.scrollIntoView({
               behavior: prefersReducedMotion ? 'auto' : 'smooth',
@@ -809,52 +535,9 @@
         });
       });
 
-      // Form submission (Conectado a Formspree)
-      const contactForm = document.getElementById('contactForm');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const submitBtn = this.querySelector('button[type="submit"]');
-          const originalText = submitBtn.innerHTML;
-          
-          submitBtn.innerHTML = '<span>Enviando...</span>';
-          submitBtn.disabled = true;
-          
-          const formData = new FormData(this);
-
-          fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          }).then(response => {
-            if (response.ok) {
-              submitBtn.innerHTML = '<span>Enviado con Éxito</span>';
-              submitBtn.style.background = 'linear-gradient(135deg, #2d5016 0%, #1a3009 100%)';
-              this.reset();
-            } else {
-              submitBtn.innerHTML = '<span>Error al enviar</span>';
-              submitBtn.style.background = 'linear-gradient(135deg, #8b0000 0%, #5c0000 100%)';
-            }
-          }).catch(error => {
-            submitBtn.innerHTML = '<span>Error de conexión</span>';
-            submitBtn.style.background = 'linear-gradient(135deg, #8b0000 0%, #5c0000 100%)';
-          }).finally(() => {
-            setTimeout(() => {
-              submitBtn.innerHTML = originalText;
-              submitBtn.style.background = '';
-              submitBtn.disabled = false;
-            }, 3000);
-          });
-        });
-      }
-
       // Parallax effect
       if (!prefersReducedMotion) {
         let ticking = false;
-        
         window.addEventListener('scroll', () => {
           if (!ticking) {
             window.requestAnimationFrame(() => {
@@ -866,23 +549,12 @@
                 orb1.style.transform = `translateY(${scrollY * 0.1}px)`;
                 orb2.style.transform = `translateY(${scrollY * -0.05}px)`;
               }
-              
               ticking = false;
             });
             ticking = true;
           }
         });
       }
-
-      // Keyboard navigation
-      document.querySelectorAll('.btn-primary, .btn-secondary, .nav-link').forEach(el => {
-        el.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            el.click();
-          }
-        });
-      });
     });
   </script>
 </body>
