@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresas | Servicios Eos</title>
+  <link rel="icon" type="image/png" href="logo_eos.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg-dark: #0a0a0a; --bg-card: #111111; --gold: #C9A962; --white: #FFFFFF; --white-muted: rgba(255,255,255,0.7); --border-subtle: rgba(201,169,98,0.15); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background-color: var(--bg-dark); color: var(--white); overflow-x: hidden; }
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .text-gold-metallic {
+      background: linear-gradient(to right, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 6s linear infinite;
+    }
+    @keyframes shine { to { background-position: 200% center; } }
+    .btn-primary {
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+      color: #000; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.75rem; padding: 0.75rem 1.5rem;
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255, 253, 208, 0.6); transition: all 0.3s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5); }
+    .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; }
+    .card:hover { border-color: rgba(252, 246, 186, 0.4); transform: translateY(-5px); }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, #BF953F, #FCF6BA); opacity: 0; transition: opacity 0.3s; }
+    .card:hover::before { opacity: 1; }
+    .logo-img { height: 60px; width: auto; object-fit: contain; }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-[rgba(201,169,98,0.08)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo_eos.png" alt="Eos Logo" class="logo-img">
+        <span class="font-semibold tracking-wide text-gold-metallic text-xl">Servicios Eos</span>
+      </a>
+      <a href="index.html" class="text-[var(--white-muted)] hover:text-[#FCF6BA] text-sm uppercase tracking-wider">Volver al Inicio</a>
+    </div>
+  </nav>
+
+  <section class="pt-32 pb-16 px-6 lg:px-12 text-center relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-gradient-to-b from-[rgba(191,149,63,0.1)] to-transparent pointer-events-none"></div>
+    <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-bold">Soluciones Corporativas</span>
+    <h1 class="font-display text-5xl md:text-6xl font-light mt-4 mb-6">Blindaje para <span class="text-gold-metallic font-semibold">Empresas</span></h1>
+    <p class="text-lg text-[var(--white-muted)] max-w-3xl mx-auto">Protegemos tu patrimonio con estrategias preventivas legales y optimizamos tu rentabilidad mediante el análisis de datos e infraestructura digital.</p>
+  </section>
+
+  <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
+    <div class="mb-12">
+      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">I. Área Legal y Preventiva</h2>
+      <p class="text-sm text-[var(--white-muted)] mt-4">Dirección a cargo de <span class="text-white font-semibold">María Isabel Sáez Vila</span>, Abogada Pontificia Universidad Católica de Chile.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card">
+        <h3 class="font-display text-2xl text-white mb-4">Asesoría Preventiva y Corporativa</h3>
+        <p class="text-[var(--white-muted)] text-sm mb-4">Evitamos multas y riesgos operativos mediante planificación estratégica.</p>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
+          <li>• Revisión y diagnóstico inicial de situación jurídica.</li>
+          <li>• Análisis de riesgos legales en operaciones mercantiles.</li>
+          <li>• Disolución y constitución de nuevas sociedades.</li>
+          <li>• Modificaciones de escrituras sociales.</li>
+          <li>• Consultas, asistencia permanente e informes legales.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-display text-2xl text-white mb-4">Gestión Contractual y Laboral</h3>
+        <p class="text-[var(--white-muted)] text-sm mb-4">Estructuración blindada para tu relación con trabajadores y proveedores.</p>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
+          <li>• Redacción de contratos laborales y de servicios.</li>
+          <li>• Elaboración de Reglamentos Internos (Orden, Higiene y Seguridad).</li>
+          <li>• Finiquitos, libros de asistencia y documentos obligatorios.</li>
+          <li>• Procesos de negociación colectiva.</li>
+          <li>• Capacitaciones a personal de RRHH y supervisores.</li>
+        </ul>
+      </div>
+
+      <div class="card md:col-span-2">
+        <h3 class="font-display text-2xl text-white mb-4">Representación y Litigios</h3>
+        <p class="text-[var(--white-muted)] text-sm leading-relaxed">
+          Defensa en tribunales ordinarios, especiales y arbitrarios en materias civiles, penales, comerciales y laborales. Representación ante SERNAC, recursos constitucionales, nulidad de actos jurídicos, procedimientos de quiebras e insolvencias, y gestiones de cobranza judicial y prejudicial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto border-t border-[var(--border-subtle)]">
+    <div class="mb-12">
+      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">II. Área de Digitalización y Análisis</h2>
+      <p class="text-sm text-[var(--white-muted)] mt-4">Optimizamos la rentabilidad de tu negocio estructurando tu información y modernizando tus procesos operativos.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="card bg-gradient-to-br from-[#111] to-[#0a0a0a]">
+        <h3 class="font-display text-2xl text-white mb-4">Modernización de Operaciones</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
+          <li>• <strong>Herramientas de Gestión (No-Code):</strong> Desarrollo de aplicaciones a medida para teléfonos o tablets orientadas al control de inventario, registros y flujos de trabajo (adiós a los cuadernos).</li>
+          <li>• <strong>Infraestructura Web:</strong> Creación de sitios web corporativos rápidos y seguros, con dominios propios y correos profesionales.</li>
+          <li>• <strong>Estructuración de Bases de Datos:</strong> Centralización de tu información para que esté segura y accesible en la nube.</li>
+        </ul>
+      </div>
+
+      <div class="card bg-gradient-to-br from-[#111] to-[#0a0a0a]">
+        <h3 class="font-display text-2xl text-white mb-4">Inteligencia de Negocios y Auditoría</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
+          <li>• <strong>Limpieza de Datos (Data Cleaning):</strong> Tomamos tus planillas desordenadas o bases de ventas, las procesamos con scripts automatizados y las convertimos en información útil.</li>
+          <li>• <strong>Reportes y Estrategia:</strong> Análisis de historial de ventas y métricas para detectar fugas de capital y productos rentables.</li>
+          <li>• <strong>Dashboards de Control:</strong> Paneles visuales interactivos para que puedas ver la salud de tu negocio desde cualquier dispositivo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center border-t border-[var(--border-subtle)] mt-12">
+    <a href="https://wa.me/56964454872" target="_blank" class="btn-primary mb-8">Solicitar Diagnóstico Empresarial</a>
+    <p class="text-xs text-[var(--white-muted)]">2026 Servicios Eos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
