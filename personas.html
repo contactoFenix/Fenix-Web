@@ -26,7 +26,7 @@
       display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255, 253, 208, 0.6); transition: all 0.3s;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5); }
-    .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; }
+    .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; height: 100%; }
     .card:hover { border-color: rgba(252, 246, 186, 0.4); transform: translateY(-5px); }
     .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #FCF6BA, transparent); opacity: 0; transition: opacity 0.3s; }
     .card:hover::before { opacity: 1; }
@@ -44,82 +44,112 @@
     </div>
   </nav>
 
-  <section class="pt-32 pb-16 px-6 lg:px-12 text-center relative">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-gradient-to-b from-[rgba(191,149,63,0.1)] to-transparent pointer-events-none"></div>
+  <section class="pt-32 pb-12 px-6 lg:px-12 text-center">
     <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-bold">Soluciones para</span>
     <h1 class="font-display text-5xl md:text-6xl font-light mt-4 mb-6">Personas e <span class="text-gold-metallic font-semibold">Independientes</span></h1>
-    <p class="text-lg text-[var(--white-muted)] max-w-2xl mx-auto">Asesoría, respuesta a consultas y apoyo interdisciplinario en gestiones personales a nivel nacional.</p>
+    <p class="text-lg text-[var(--white-muted)] max-w-2xl mx-auto">Asesoría integral y representación legal con enfoque interdisciplinario.</p>
   </section>
 
-  <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
+  <section class="py-12 px-6 lg:px-12 max-w-7xl mx-auto">
     <div class="mb-12">
-      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">I. Área Legal Jurídica</h2>
-      <p class="text-sm text-[var(--white-muted)] mt-4">Dirección legal a cargo de <span class="text-white font-semibold">María Isabel Sáez Vila</span>, Abogada Pontificia Universidad Católica de Chile.</p>
+      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">I. Departamento Jurídico</h2>
+      <p class="text-sm text-[var(--white-muted)] mt-4 leading-relaxed">
+        Nuestra división legal se encuentra bajo la dirección titular de <span class="text-white font-semibold">María Isabel Sáez Vila</span> (Abogada de la Pontificia Universidad Católica de Chile), coordinando a nuestra red de especialistas para brindar una defensa sólida.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Derecho de Familia</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• Alimentos y Cuidado Personal</li>
-          <li>• Relación Directa y Regular (visitas)</li>
-          <li>• Violencia Intrafamiliar (VIF) y Medidas de Protección</li>
-          <li>• Divorcios y Filiación (paternidad)</li>
-          <li>• Autorización de salida de menores del país</li>
-          <li>• Bienes Familiares, guardas y patria potestad</li>
-        </ul>
+    <div class="space-y-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Derecho Constitucional</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Protección de Derechos</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• Interpretación y aplicación de la Constitución.</li>
+            <li>• Protección de Derechos Humanos.</li>
+            <li>• Recursos de Protección y Amparo (General y Económico).</li>
+            <li>• Litigación en el Tribunal Constitucional.</li>
+            <li>• Control de constitucionalidad de las leyes.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Derecho Civil</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Patrimonio y Responsabilidad</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• <strong class="text-[#FCF6BA]">Negligencias Médicas.</strong></li>
+            <li>• Indemnización de Perjuicios (Contractual y Extracontractual).</li>
+            <li>• Juicios de Arrendamiento y Precarios.</li>
+            <li>• Redacción de escrituras, contratos y estudio de títulos.</li>
+            <li>• Posesión efectiva y cambio de nombre.</li>
+            <li>• Propiedad Intelectual y Quiebras.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Derecho Laboral</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• Despido Injustificado y Autodespido</li>
-          <li>• Nulidad de despido y Cobro de prestaciones</li>
-          <li>• Accidentes del Trabajo y Prácticas antisindicales</li>
-          <li>• Acoso Sexual y Tutela laboral</li>
-          <li>• Desafuero y Juicios Ejecutivos</li>
-        </ul>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Derecho de Familia</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Apoyo Interdisciplinario</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• Alimentos, Cuidado Personal y Visitas.</li>
+            <li>• Divorcios y Filiación (Paternidad).</li>
+            <li>• Violencia Intrafamiliar (VIF) y Medidas de Protección.</li>
+            <li>• Autorización de salida del país.</li>
+            <li>• Bienes familiares y patria potestad.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Derecho Laboral</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Defensa del Trabajador</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• Despido Injustificado y Nulidad de despido.</li>
+            <li>• Autodespido y Cobro de prestaciones.</li>
+            <li>• Accidentes del Trabajo y Enfermedades Profesionales.</li>
+            <li>• Acoso Sexual y Tutela laboral.</li>
+            <li>• Desafuero y Juicios Ejecutivos.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Derecho Civil</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• Indemnización de Perjuicios y Responsabilidad</li>
-          <li>• Juicios de Arrendamiento y Precarios</li>
-          <li>• Redacción de escrituras y contratos</li>
-          <li>• Trámites de posesión efectiva y Estudio de títulos</li>
-          <li>• Solicitud de cambio de nombre y Quiebras</li>
-          <li>• Propiedad Intelectual y registro de marcas</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Juzgados de Policía Local</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• Accidentes de Tránsito</li>
-          <li>• Ley de Copropiedad Inmobiliaria</li>
-          <li>• Cobro de Autopistas</li>
-          <li>• Prescripción y Reclamación de multas</li>
-          <li>• Asesoría en procesos de representación personal</li>
-        </ul>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Migración</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Movilidad Internacional</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• Permanencia transitoria y Permisos de trabajo.</li>
+            <li>• Residencia Temporal y Definitiva.</li>
+            <li>• Nacionalización y Regularizaciones.</li>
+            <li>• Recursos de protección y Reclamaciones administrativas.</li>
+            <li>• Orientación en contratación de extranjeros.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="font-display text-2xl text-white mb-4">Juzgados de Policía Local</h3>
+          <p class="text-xs text-gold-metallic uppercase tracking-widest mb-4">Asesoría Local</p>
+          <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+            <li>• Accidentes de Tránsito.</li>
+            <li>• Ley de Copropiedad Inmobiliaria.</li>
+            <li>• Cobro de Autopistas (TAG).</li>
+            <li>• Prescripción y Reclamación de multas.</li>
+            <li>• Procesos de representación personal.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto border-t border-[var(--border-subtle)]">
-    <h2 class="font-display text-3xl text-gold-metallic mb-8 border-b border-[var(--border-subtle)] pb-4">II. Área Digital y Presencia Web</h2>
+    <h2 class="font-display text-3xl text-gold-metallic mb-8 border-b border-[var(--border-subtle)] pb-4">II. División Digital y Presencia Web</h2>
     <div class="card bg-gradient-to-br from-[#111] to-[#0a0a0a]">
       <h3 class="font-display text-2xl text-white mb-4">Portafolios y Presencia Profesional</h3>
       <p class="text-[var(--white-muted)] text-sm leading-relaxed mb-6">
-        Diseñado para profesionales independientes, terapeutas o asesores que necesitan digitalizar sus servicios. 
-        Creación de ecosistemas web optimizados, páginas de aterrizaje (Landing Pages) corporativas, configuración de correos profesionales y enlaces directos para captación de clientes. Te llevamos de lo análogo a lo digital con una estructura sólida.
+        Nuestro equipo de infraestructura tecnológica se encarga de la digitalización estratégica para profesionales que buscan destacar. Creación de Landing Pages rápidas, configuración de ecosistemas web y automatización de contacto vía WhatsApp para convertir visitas en consultas reales.
       </p>
-      <a href="https://wa.me/56964454872" target="_blank" class="text-gold-metallic text-sm font-semibold hover:text-white transition-colors">Solicitar cotización digital →</a>
+      <a href="https://wa.me/56964454872" target="_blank" class="text-gold-metallic text-sm font-semibold hover:text-white transition-colors">Solicitar presupuesto digital →</a>
     </div>
   </section>
 
-  <footer class="py-8 text-center border-t border-[var(--border-subtle)] mt-12">
-    <a href="https://wa.me/56964454872" target="_blank" class="btn-primary mb-8">Contactar por WhatsApp</a>
+  <footer class="py-12 text-center border-t border-[var(--border-subtle)] bg-[#050505]">
+    <a href="https://wa.me/56964454872" target="_blank" class="btn-primary mb-8">Contactar a Servicios Eos</a>
     <p class="text-xs text-[var(--white-muted)]">2026 Servicios Eos. Todos los derechos reservados.</p>
   </footer>
 </body>

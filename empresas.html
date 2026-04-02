@@ -26,7 +26,7 @@
       display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255, 253, 208, 0.6); transition: all 0.3s;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(191, 149, 63, 0.5); }
-    .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; }
+    .card { background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; height: 100%; }
     .card:hover { border-color: rgba(252, 246, 186, 0.4); transform: translateY(-5px); }
     .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, #BF953F, #FCF6BA); opacity: 0; transition: opacity 0.3s; }
     .card:hover::before { opacity: 1; }
@@ -44,48 +44,45 @@
     </div>
   </nav>
 
-  <section class="pt-32 pb-16 px-6 lg:px-12 text-center relative">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-gradient-to-b from-[rgba(191,149,63,0.1)] to-transparent pointer-events-none"></div>
+  <section class="pt-32 pb-12 px-6 lg:px-12 text-center">
     <span class="text-gold-metallic text-sm tracking-[0.2em] uppercase font-bold">Soluciones Corporativas</span>
     <h1 class="font-display text-5xl md:text-6xl font-light mt-4 mb-6">Blindaje para <span class="text-gold-metallic font-semibold">Empresas</span></h1>
     <p class="text-lg text-[var(--white-muted)] max-w-3xl mx-auto">Protegemos tu patrimonio con estrategias preventivas legales y optimizamos tu rentabilidad mediante el análisis de datos e infraestructura digital.</p>
   </section>
 
-  <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto">
+  <section class="py-12 px-6 lg:px-12 max-w-7xl mx-auto">
     <div class="mb-12">
-      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">I. Área Legal y Preventiva</h2>
-      <p class="text-sm text-[var(--white-muted)] mt-4">Dirección a cargo de <span class="text-white font-semibold">María Isabel Sáez Vila</span>, Abogada Pontificia Universidad Católica de Chile.</p>
+      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">I. Departamento Corporativo Legal</h2>
+      <p class="text-sm text-[var(--white-muted)] mt-4 leading-relaxed">
+        Nuestra área corporativa está bajo la dirección titular de <span class="text-white font-semibold">María Isabel Sáez Vila</span> (Abogada de la Pontificia Universidad Católica de Chile), liderando las estrategias de protección y cumplimiento normativo para tu empresa.
+      </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
       <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Asesoría Preventiva y Corporativa</h3>
-        <p class="text-[var(--white-muted)] text-sm mb-4">Evitamos multas y riesgos operativos mediante planificación estratégica.</p>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
+        <h3 class="font-display text-2xl text-white mb-4">Asesoría Preventiva</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm">
           <li>• Revisión y diagnóstico inicial de situación jurídica.</li>
           <li>• Análisis de riesgos legales en operaciones mercantiles.</li>
-          <li>• Disolución y constitución de nuevas sociedades.</li>
-          <li>• Modificaciones de escrituras sociales.</li>
-          <li>• Consultas, asistencia permanente e informes legales.</li>
+          <li>• Redacción y revisión de instrumentos obligatorios (Reglamento Interno, Higiene y Seguridad).</li>
+          <li>• Elaboración de informes legales estratégicos.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3 class="font-display text-2xl text-white mb-4">Gestión Contractual y Laboral</h3>
-        <p class="text-[var(--white-muted)] text-sm mb-4">Estructuración blindada para tu relación con trabajadores y proveedores.</p>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• Redacción de contratos laborales y de servicios.</li>
-          <li>• Elaboración de Reglamentos Internos (Orden, Higiene y Seguridad).</li>
-          <li>• Finiquitos, libros de asistencia y documentos obligatorios.</li>
-          <li>• Procesos de negociación colectiva.</li>
-          <li>• Capacitaciones a personal de RRHH y supervisores.</li>
+        <h3 class="font-display text-2xl text-white mb-4">Gestión Contractual</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+          <li>• Redacción de contratos de trabajo y servicios especializados.</li>
+          <li>• Modificaciones de escrituras sociales.</li>
+          <li>• Disolución y constitución de nuevas sociedades.</li>
+          <li>• Procesos de negociación colectiva y capacitaciones legales.</li>
         </ul>
       </div>
 
       <div class="card md:col-span-2">
-        <h3 class="font-display text-2xl text-white mb-4">Representación y Litigios</h3>
+        <h3 class="font-display text-2xl text-white mb-4">Representación y Defensa Institucional</h3>
         <p class="text-[var(--white-muted)] text-sm leading-relaxed">
-          Defensa en tribunales ordinarios, especiales y arbitrarios en materias civiles, penales, comerciales y laborales. Representación ante SERNAC, recursos constitucionales, nulidad de actos jurídicos, procedimientos de quiebras e insolvencias, y gestiones de cobranza judicial y prejudicial.
+          Nuestros especialistas te representan en juicios ante tribunales ordinarios y especiales en materias civiles, comerciales y laborales. Ejecutamos defensa ante el SERNAC, recursos constitucionales y gestiones de cobranza judicial y prejudicial con altos estándares de exigencia.
         </p>
       </div>
     </div>
@@ -93,32 +90,32 @@
 
   <section class="py-16 px-6 lg:px-12 max-w-7xl mx-auto border-t border-[var(--border-subtle)]">
     <div class="mb-12">
-      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">II. Área de Digitalización y Análisis</h2>
-      <p class="text-sm text-[var(--white-muted)] mt-4">Optimizamos la rentabilidad de tu negocio estructurando tu información y modernizando tus procesos operativos.</p>
+      <h2 class="font-display text-3xl text-gold-metallic mb-2 border-b border-[var(--border-subtle)] pb-4">II. División de Inteligencia y Desarrollo</h2>
+      <p class="text-sm text-[var(--white-muted)] mt-4 leading-relaxed">
+        Nuestro equipo de analistas y desarrolladores se encarga de modernizar tu flujo de trabajo, estructurando la información vital de tu negocio para maximizar la rentabilidad.
+      </p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-8">
       <div class="card bg-gradient-to-br from-[#111] to-[#0a0a0a]">
-        <h3 class="font-display text-2xl text-white mb-4">Modernización de Operaciones</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• <strong>Herramientas de Gestión (No-Code):</strong> Desarrollo de aplicaciones a medida para teléfonos o tablets orientadas al control de inventario, registros y flujos de trabajo (adiós a los cuadernos).</li>
-          <li>• <strong>Infraestructura Web:</strong> Creación de sitios web corporativos rápidos y seguros, con dominios propios y correos profesionales.</li>
-          <li>• <strong>Estructuración de Bases de Datos:</strong> Centralización de tu información para que esté segura y accesible en la nube.</li>
+        <h3 class="font-display text-2xl text-white mb-4">Gestión y Datos</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+          <li>• <strong>Data Cleaning:</strong> Limpieza y estructuración automatizada de registros desordenados.</li>
+          <li>• <strong>Inteligencia de Negocios:</strong> Análisis de rentabilidad y detección de fugas de capital.</li>
+          <li>• <strong>Dashboard Control:</strong> Paneles visuales para monitorear el estado del negocio.</li>
         </ul>
       </div>
-
       <div class="card bg-gradient-to-br from-[#111] to-[#0a0a0a]">
-        <h3 class="font-display text-2xl text-white mb-4">Inteligencia de Negocios y Auditoría</h3>
-        <ul class="space-y-2 text-[var(--white-muted)] text-sm leading-relaxed">
-          <li>• <strong>Limpieza de Datos (Data Cleaning):</strong> Tomamos tus planillas desordenadas o bases de ventas, las procesamos con scripts automatizados y las convertimos en información útil.</li>
-          <li>• <strong>Reportes y Estrategia:</strong> Análisis de historial de ventas y métricas para detectar fugas de capital y productos rentables.</li>
-          <li>• <strong>Dashboards de Control:</strong> Paneles visuales interactivos para que puedas ver la salud de tu negocio desde cualquier dispositivo.</li>
+        <h3 class="font-display text-2xl text-white mb-4">Ecosistemas Web</h3>
+        <ul class="space-y-2 text-[var(--white-muted)] text-sm">
+          <li>• Desarrollo de plataformas corporativas optimizadas.</li>
+          <li>• Configuración de dominios y correos profesionales.</li>
+          <li>• Implementación de bases de datos seguras en la nube.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 text-center border-t border-[var(--border-subtle)] mt-12">
+  <footer class="py-12 text-center border-t border-[var(--border-subtle)] bg-[#050505]">
     <a href="https://wa.me/56964454872" target="_blank" class="btn-primary mb-8">Solicitar Diagnóstico Empresarial</a>
     <p class="text-xs text-[var(--white-muted)]">2026 Servicios Eos. Todos los derechos reservados.</p>
   </footer>
